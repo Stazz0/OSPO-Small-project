@@ -1,0 +1,23 @@
+{
+ "cloud": {},
+ "resources": {
+  "localhost": {
+   "implementations": {
+    "simple.increment": {
+     "maxTime": 100,
+     "executions": 5,
+     "avgTime": 63,
+     "minTime": 53
+    }
+   }
+  }
+ },
+ "implementations": {
+  "simple.increment": {
+   "maxTime": 100,
+   "executions": 5,
+   "avgTime": 63,
+   "minTime": 53
+  }
+ }
+}
