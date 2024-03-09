@@ -1,15 +1,13 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 from rocrate.rocrate import ROCrate
-from rocrate.model.person import Person
-from rocrate.model.contextentity import ContextEntity
 import json
 import os
 
-def analyze_ro_crate(rocrate_path):
-    crate = ROCrate(rocrate_path)
+def analyze_ro_crate(RO_CRATE_PATH):
+    crate = ROCrate(RO_CRATE_PATH)
 
-    with open(os.path.join(rocrate_path, 'ro-crate-metadata.json'), 'r') as f:
+    with open(os.path.join(RO_CRATE_PATH, 'ro-crate-metadata.json'), 'r') as f:
         metadata = json.load(f)
 
     dependencies = metadata.get('softwareDependencies', [])
@@ -17,10 +15,10 @@ def analyze_ro_crate(rocrate_path):
 
     print("Software Dependencies:")
     for dep in dependencies:
-        print(dep['name'], dep.get('version', 'Unspecified'))  # Improved output
+        print(dep['name'], dep.get('version', 'Unspecified'))
 
-    print("Operating System Requirements:")
+    print("Required Operating System :")
     if os_requirements:
         print(os_requirements)
     else:
-        print("Operating system requirements not explicitly specified")
+        print("Required Operating system not explicitly specified")
