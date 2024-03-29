@@ -22,12 +22,12 @@ def analyze_ro_crate(RO_CRATE_PATH):
         print(os_requirements)
     else:
         print("Required Operating system is not specified")
-"""
+
     authors = crate.creator
     print("Authors:")
     for author in authors:
         print(author.name)
-"""
+
 if __name__ == "__main__":
     ro_crate_path = os.path.expanduser('~/OSPO-Gsoc/OSPO-Small-project/RO-Crate')
     analyze_ro_crate(ro_crate_path)
